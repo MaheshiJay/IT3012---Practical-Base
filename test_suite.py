@@ -18,6 +18,7 @@ class TestPractical1And2_ReflexAgents(unittest.TestCase):
 
     def test_simple_reflex_logic(self):
         """Test 1: Simple Reflex Agent should react purely to immediate percepts."""
+
         # Scenario A: Food is present -> Agent should want to collect/stay/move appropriately
         percept_food = {'wall_ahead': False, 'food_here': True}
         action = self.simple_agent.sense_and_act(percept_food)
@@ -28,6 +29,7 @@ class TestPractical1And2_ReflexAgents(unittest.TestCase):
         action_wall = self.simple_agent.sense_and_act(percept_wall)
         self.assertIn(action_wall, ['Left', 'Right', 'Down', 'Up'],
                       "Agent did not output a valid movement action when facing a wall.")
+
 
     def test_model_based_memory(self):
         """Test 2: Model-Based Agent should maintain internal state to escape loops."""
